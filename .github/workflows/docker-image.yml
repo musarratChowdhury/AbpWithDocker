@@ -27,21 +27,22 @@ jobs:
 
     - name: Build Web Image
       run: |
-        docker build -t ghcr.io/${{ github.musarratChowdhury }}/abpdockerweb:latest \
+        docker build -t ghcr.io/${{ github.repository }}/abpdockerweb:latest \
           -f src/AbpDocker.Web/Dockerfile .
 
     - name: Build IdentityServer Image
       run: |
-        docker build -t ghcr.io/${{ github.musarratChowdhury }}/abpdockeridentityserver:latest \
+        docker build -t ghcr.io/${{ github.repository }}/abpdockeridentityserver:latest \
           -f src/AbpDocker.IdentityServer/Dockerfile .
 
     - name: Build HttpApi Image
       run: |
-        docker build -t ghcr.io/${{ github.musarratChowdhury }}/abpdockerhttpapihost:latest \
+        docker build -t ghcr.io/${{ github.repository }}/abpdockerhttpapihost:latest \
           -f src/AbpDocker.HttpApi.Host/Dockerfile .
 
     - name: Push All Images
       run: |
-        docker push ghcr.io/${{ github.musarratChowdhury }}/abpdockerweb:latest
-        docker push ghcr.io/${{ github.musarratChowdhury }}/abpdockeridentityserver:latest
-        docker push ghcr.io/${{ github.musarratChowdhury }}/abpdockerhttpapihost:latest
+        docker push ghcr.io/${{ github.repository }}/abpdockerweb:latest
+        docker push ghcr.io/${{ github.repository }}/abpdockeridentityserver:latest
+        docker push ghcr.io/${{ github.repository }}/abpdockerhttpapihost:latest
+
